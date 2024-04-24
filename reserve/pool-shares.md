@@ -12,17 +12,11 @@ Frankencoin Pool Shares (FPS) are shares in the equity reserve pool of the Frank
 
 ## Economics
 
-Anyone can create additional pool shares by depositing reserve capital at any time. Also, as long as the reserve meets the minimum requirement, pool shares can be redeemed again at any time. An important design consideration is the pricing mechanism for pool shares. As having a price implies having a valuation, this boils down to evaluating the Frankencoin system.
-
-### Initial Approach
-
-An early version of the Frankencoin simply valued the Frankencoin system as the sum of all reserves. This would be similar to assuming that the market capitalization of a company is corresponding to its equity capital. Unfortunately, this approach leads to an inefficient use of capital and prevents the net creation of new money.
-
-For example, if the interest rate of the Swiss franc is 5% and 30 million ZCHF have been minted against some collateral, then there would be a flow of about 1.5 million ZCHF per year from the minter into the reserve. This flow does not need to be explicit, it could also be in the form of expected liquidation proceeds or similar. In any case, having such a flow would attract 30 million ZCHF in reserves on the other side in an efficient market, as money that seeks the market interest rate of 5% is flowing in. If there is more than 10 million in the reserve, reserve pool share holders would earn less than 5% and vice versa. In such a scenario, no ZCHF would be left any more for other purposes besides buying pool shares!
+Anyone can create additional pool shares by depositing reserve capital at any time, or redeem them again after a minimum holding period of 90 days. Therefore, an important design consideration is the pricing mechanism for pool shares. As having a price implies having a valuation, this boils down to evaluating the Frankencoin system.
 
 ### Proportional Capital Valuation
 
-In an approach inspired by the research paper "The Continuous Capital Corporation", the Frankencoin system evaluates itself at a constant multiple of its capital. This multiple is set to three. So if there is 1 million ZCHF in equity capital K, anyone can subscribe to new pool shares at a valuation of 3 million ZCHF, or also redeem old shares at that valuation. Mathematically, valuation V is:
+In an approach inspired by the research paper "[The Continuous Capital Corporation](https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=4189472)", the Frankencoin system evaluates itself at a constant multiple of its capital. This multiple is set to three. So if there is 1 million ZCHF in equity capital K, anyone can subscribe to new pool shares at a valuation of 3 million ZCHF, or also redeem old shares at that valuation. Mathematically, valuation V is:
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Market cap as a function of capital</p></figcaption></figure>
 
