@@ -33,5 +33,5 @@ Note that calling the _openPosition_ method, an opening fee of 1000 ZCHF is auto
 
 Here is a screenshot of the parameters used to open the first position with Wrapped Ether as collateral in transaction [0x380b...8d](https://etherscan.io/tx/0x380b574e4b9489c8ffe66ae169156d4aaeba44ec29bb173dc208740086bf128d):
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 

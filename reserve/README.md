@@ -8,7 +8,7 @@ There are three types of reserves in the Frankencoin system. The first one consi
 
 <div data-full-width="true">
 
-<figure><img src="../.gitbook/assets/image.png" alt="" width="375"><figcaption><p>The Frankencoin "balance sheet"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt="" width="375"><figcaption><p>The Frankencoin "balance sheet"</p></figcaption></figure>
 
 </div>
 

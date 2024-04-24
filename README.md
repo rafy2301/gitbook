@@ -8,5 +8,5 @@ This website provides technical documentation for the Frankencoin system, allowi
 
 The Frankencoin is a collateralized stablecoin that is intended to track the value of the Swiss Franc. It's governance is decentralized, with anyone being able to propose new minting mechanisms and anyone who owns more than 2% of the voting power having the power to veto proposals. The initial minting mechanism builds on a novel auction-based price detection and liquidation mechanism first described in the (outdated) [Frankencoin research paper](https://www.snb.ch/n/mmr/reference/sem\_2022\_06\_03\_maire/source/sem\_2022\_06\_03\_maire.n.pdf). A more recent and complete specification can be [found here](https://frankencoin.com/thesis-preprint-frankencoin.pdf). Unlike other collateralized stablecoins, Frankencoin does not depend on external oracles and is therefore also very versatile with regards to the used collateral.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>Components of the Frankencoin System</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Components of the Frankencoin System</p></figcaption></figure>
 

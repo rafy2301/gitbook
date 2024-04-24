@@ -22,27 +22,37 @@ For example, if the interest rate of the Swiss franc is 5% and 30 million ZCHF h
 
 ### Proportional Capital Valuation
 
-In an approach inspired by the research paper "The Continuous Capital Corporation", the Frankencoin system evaluates itself at a constant multiple of its capital. This multiple is set to three. So if there is 1 million ZCHF in the reserve, anyone can subscribe to new pool shares at a valuation of 3 million ZCHF, or also redeem old shares at that valuation. Mathematically, we impose:
+In an approach inspired by the research paper "The Continuous Capital Corporation", the Frankencoin system evaluates itself at a constant multiple of its capital. This multiple is set to three. So if there is 1 million ZCHF in equity capital K, anyone can subscribe to new pool shares at a valuation of 3 million ZCHF, or also redeem old shares at that valuation. Mathematically, valuation V is:
 
-V(K) = 3K
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Market cap as a function of capital</p></figcaption></figure>
 
-Whereas V(K) is the valuation of the Frankencoinsystem if there are K (for capital) Frankencoins in the reserve. Given the number of pool shares \theta in circulation, the marginal price per share is always given as
+Whereas V(K) is the market cap of all Frankencoin Pool Shares (FPS) in circulation if there are K Frankencoins in equity capital. Given the number of pool shares s in circulation, the marginal price p per share is given as
 
-p(K) = V(K)/\theta = 3K/\theta
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Price per share</p></figcaption></figure>
 
-The following equation can be used to calculate the new number of outstanding shares after an investment of \deltaK has been made:
+From the above constraints follow that an investment of additional capital ΔK leads to the following rules for determining the new number of shares given the old number of shares:
 
-(V(K+\deltaK)/V(K)) = (\theta(K+\deltaK)/\theta(K))^3
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>New number of shares after investment ΔK</p></figcaption></figure>
 
-Unfortunately, solving for the new number of shares requires us to take the third root, a mathematical operation that is not directly supported in solidity. With this equation, two thirds of the increased valuation comes from the implied price increase and one third from the increased number of shares.
+Similarly, the same investment ΔK leads to a new price:
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>New price per share after investment ΔK</p></figcaption></figure>
+
+One can verify that the valuation equation still holds after that investment by multiplying the number of shares with their price in order to obtain the new valuation:
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Verification</p></figcaption></figure>
+
+In other words: when someone invests into the Frankencoin system, two thirds of the increased market cap comes from the price increase and one third from the increased number of shares.
 
 ### Equilibrium
 
-Consider again the example with 30 million ZCHF in outstanding mints and an interest of 5%, leading to a reserve inflow of 1.5 million per year. Under these circumstances, rational market participants will value the entire pool at 30 million ZCHF and therefore buy additional pool shares until the valuation hits 30 million ZCHF. Unlike before, this valuation is already reached at a reserve pool size of 10 million ZCHF, leaving 20 million ZCHF in circulation that can be used for other purposes.
+Consider again the example with 30 million ZCHF in outstanding mints and an interest of 5%, leading to a reserve inflow of 1.5 million per year. Under these circumstances, rational market participants will value the entire pool at 30 million ZCHF and therefore buy additional pool shares until the valuation hits 30 million ZCHF. This valuation is reached at a reserve pool size of 10 million ZCHF, leaving 20 million ZCHF in circulation that can be used for other purposes.
 
-This is essentially fractional reserve banking with a reserve of one third. In contrast, the tier 1 equity capital of modern banks is usually much less than that, so the Frankencoin system has a much higher reserves. However, unlike in the traditional banking system, this reserve requirement is not strictly enforced by a regulator, but more like a carrot that attracts the equilibrium towards the reserve target.
+This is essentially fractional reserve banking with a reserve of one third. In contrast, the tier 1 equity capital of modern banks is usually much less than that, so the Frankencoin system has a considerably higher reserves. However, unlike in the traditional banking system, this reserve requirement is not strictly enforced by a regulator, but more like a carrot that attracts the equilibrium towards the reserve target.
 
 If the effective interest at which new positions can be opened is at 5% and the reserve is below the target of one third of the outstanding balance, then it is possible to do interest arbitrage by minting additional ZCHF at an interest of 5% per year and using those to buy pool shares that yield maybe 6% per year. The opposite is the case if the reserve is higher than one third. In that case, minters should think about selling pool shares to repay their debt (if they are able to).
+
+This leads to the following rule of thumb: if the FPS market cap is higher than the market cap of ZCHF, then that means that the market participants are beeting on the system to grow. If the FPS market cap is lower than the ZCHF market cap, then the market is signaling that it expects the Frankencoin system to shrink.
 
 ### Limits to Capital Efficiency
 
